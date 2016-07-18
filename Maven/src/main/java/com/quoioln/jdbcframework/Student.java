@@ -1,7 +1,7 @@
 /**
  * 
  */
-package jdbcframework;
+package com.quoioln.jdbcframework;
 
 /**
  * @author quoioln
@@ -10,6 +10,7 @@ package jdbcframework;
 public class Student {
 	private String name;
 	private int age;
+	private int id;
 	/**
 	 * @return the name
 	 */
@@ -33,5 +34,11 @@ public class Student {
 	 */
 	public final void setAge(int age) {
 		this.age = age;
+	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
 	} 
 }
