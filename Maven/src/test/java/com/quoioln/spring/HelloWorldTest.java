@@ -18,6 +18,8 @@ public class HelloWorldTest {
 		System.out.println(helloA.getMessage());
 		HelloWorld helloB = (HelloWorld) context.getBean("helloWorld");
 		System.out.println(helloB.getMessage());
-		context.registerShutdownHook();
+//		context.registerShutdownHook();
+//		System.out.println("OK");
+		
 	}
 }
