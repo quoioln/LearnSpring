@@ -1,4 +1,6 @@
-<%-- <%@ tag language="java" pageEncoding="UTF-8" pageEncoding="UTF-8"%> --%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+   "http://www.w3.org/TR/html4/loose.dtd">
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
@@ -7,6 +9,7 @@
 	</head>
 	<body>
 		<h2>Student Information</h2>
+		${a }
 		<table border="1">
 			<thead>
 				<tr><th>Id</th><th>Name</th><th>Age</th></tr>
@@ -14,7 +17,7 @@
 			<tbody>
 				<c:forEach var="student" items="${studentList}" varStatus="status">
 					<tr>
-						<td>${student.id }</td>
+						<td>${status.index + 1 }</td>
 						<td>${student.name }</td>
 						<td>${student.age }</td>
 					</tr>
