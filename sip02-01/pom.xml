@@ -19,18 +19,18 @@ Code: https://github.com/springinpractice
 	
 	<modelVersion>4.0.0</modelVersion>
 	
-	<parent>
-		<groupId>com.springinpractice</groupId>
-		<artifactId>com.springinpractice.top</artifactId>
-		<version>1.0-RELEASE</version>
-	</parent>
+<!-- 	<parent> -->
+<!-- 		<groupId>com.springinpractice</groupId> -->
+<!-- 		<artifactId>com.springinpractice.top</artifactId> -->
+<!-- 		<version>1.0-RELEASE</version> -->
+<!-- 	</parent> -->
 	
-	<artifactId>com.springinpractice.02_01</artifactId>
-	<packaging>war</packaging>
+<!-- 	<artifactId>com.springinpractice.02_01</artifactId> -->
+<!-- 	<packaging>war</packaging> -->
 	
-	<name>Spring in Practice Section 2.1</name>
-	<description>Shows how to use Spring's JdbcTemplate for data access.</description>
-	<url>http://springinpractice.com/</url>
+<!-- 	<name>Spring in Practice Section 2.1</name> -->
+<!-- 	<description>Shows how to use Spring's JdbcTemplate for data access.</description> -->
+<!-- 	<url>http://springinpractice.com/</url> -->
 	
 	<properties>
 		<chapter.number>02</chapter.number>

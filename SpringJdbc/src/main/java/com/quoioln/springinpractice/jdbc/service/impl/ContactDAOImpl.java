@@ -63,7 +63,6 @@ public class ContactDAOImpl implements ContactDAO {
 	@Inject private NamedParameterJdbcOperations jdbcTemplate;
 	@Inject private ContactRowMapper contactRowMapper;
 	
-	@Override
 	public void addContact(Contact contact) {
 		MapSqlParameterSource mapSqlParameter = new MapSqlParameterSource();
 		mapSqlParameter.addValue(FIRST_NAME, contact.getFirstName());
@@ -75,7 +74,6 @@ public class ContactDAOImpl implements ContactDAO {
 		contact.setId(keyHolder.getKey().longValue());
 	}
 
-	@Override
 	public Contact getContactId(Long id) {
 		MapSqlParameterSource mapSqlParameter = new MapSqlParameterSource();
 		mapSqlParameter.addValue(CONTACT_ID, id);
@@ -83,12 +81,10 @@ public class ContactDAOImpl implements ContactDAO {
 		return jdbcTemplate.queryForObject(FIND_CONTACT_BY_ID, params, contactRowMapper);
 	}
 
-	@Override
 	public List<Contact> getAllContact() {
 		return jdbcTemplate.query(FIND_ALL_CONTACT_SQL, new HashMap<String, Object>(), contactRowMapper);
 	}
 
-	@Override
 	public boolean updateContact(Contact contact) {
 		MapSqlParameterSource mapSqlParameter = new MapSqlParameterSource();
 		mapSqlParameter.addValue(FIRST_NAME, contact.getFirstName());
@@ -99,7 +95,6 @@ public class ContactDAOImpl implements ContactDAO {
 		return jdbcTemplate.update(ADD_CONTACT_SQL, params) > 0;
 	}
 
-	@Override
 	public boolean deleteContactById(Long id) {
 		MapSqlParameterSource mapSqlParameter = new MapSqlParameterSource();
 		mapSqlParameter.addValue(CONTACT_ID, id);
@@ -107,7 +102,6 @@ public class ContactDAOImpl implements ContactDAO {
 		return jdbcTemplate.update(ADD_CONTACT_SQL, params) > 0;
 	}
 
-	@Override
 	public List<Contact> getContactsByEmail(String email) {
 		MapSqlParameterSource mapSqlParameter = new MapSqlParameterSource();
 		mapSqlParameter.addValue(EMAIL, "%" + email + "%");

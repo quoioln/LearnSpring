@@ -17,13 +17,13 @@ import com.quoioln.springinpractice.jdbc.service.dao.ContactDAO;
  */
 @Component
 public class ContactRowMapper implements RowMapper<Contact> {
-	@Override
-	public Contact mapRow(ResultSet resultSet, int countNum) throws SQLException {
-		Contact contact = new Contact();
-		contact.setFirstName(resultSet.getString(ContactDAO.FIRST_NAME));
-		contact.setLastName(resultSet.getString(ContactDAO.LAST_NAME));
-		contact.setEmail(resultSet.getString(ContactDAO.EMAIL));
-		return contact;
-	}
+
+    public Contact mapRow(ResultSet resultSet, int countNum) throws SQLException {
+        Contact contact = new Contact();
+        contact.setFirstName(resultSet.getString(ContactDAO.FIRST_NAME));
+        contact.setLastName(resultSet.getString(ContactDAO.LAST_NAME));
+        contact.setEmail(resultSet.getString(ContactDAO.EMAIL));
+        return contact;
+    }
 }
 
