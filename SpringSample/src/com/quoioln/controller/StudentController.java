@@ -42,7 +42,9 @@ public class StudentController {
 //        System.out.println("age 1:" + student.getAge());
     	studentDAO.addStudent(student);
     	System.out.println(student.getId());
-        model.put("student", student);
+    	Student s = (Student) model.get("student");
+    	System.out.println(s.getName());
+//        model.put("student", student);
         return "student";
     }
 }

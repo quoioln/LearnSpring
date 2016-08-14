@@ -2,8 +2,8 @@
 <!DOCTYPE hibernate-mapping PUBLIC
         "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
         "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<hibernate-mapping package="com.quoioln.model">
-	<class name="Student" catalog="mydb_test">
+<hibernate-mapping>
+	<class name="com.quoioln.model.Student" catalog="mydb_test">
 		<id name="id" column="id" type="java.lang.Integer">
 			<generator class="increment"></generator>
 		</id>
