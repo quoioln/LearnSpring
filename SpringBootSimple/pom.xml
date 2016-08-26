@@ -46,6 +46,9 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
+<!-- 			<groupId>org.springframework.data</groupId> -->
+<!--         <artifactId>spring-data-jpa</artifactId> -->
+<!-- 			<version>1.9.4.RELEASE</version> -->
 		</dependency>
 		
 		<dependency>

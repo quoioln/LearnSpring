@@ -3,9 +3,11 @@
  */
 package com.quoioln.springsimple.model;
 
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
 /**
@@ -13,6 +15,8 @@ import javax.validation.constraints.NotNull;
  *
  * @author quoioln
  */
+@Entity
+@Table(name = "user")
 public class User {
 	
 	/** The id. */
@@ -37,6 +41,14 @@ public class User {
 	private String email;
 	
 	private Integer deleteFlag;
+	
+	/**
+	 * Instantiates a new user.
+	 *
+	 */
+	public User() {
+	}
+	
 	/**
 	 * Instantiates a new user.
 	 *

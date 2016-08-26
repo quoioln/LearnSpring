@@ -3,7 +3,6 @@
  */
 package com.quoioln.springsimple.controller;
 
-import java.util.Arrays;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,12 +18,12 @@ import com.quoioln.springsimple.model.Student;
  *
  */
 @RestController
-@RequestMapping("/user")
+@RequestMapping("/student")
 public class HelloWorldController {
 	@Autowired
 	private StudentDao studentDao;
 	
-	@RequestMapping("/")
+	@RequestMapping("")
 	public List<Student> getAll() {
 //		List<Student> studentList = Arrays.asList(new Student(1L, "vpquoi", 22), new Student(2L, "ntcnhung", 22));
 		List<Student> studentList = studentDao.findAll();
