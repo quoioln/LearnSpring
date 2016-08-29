@@ -27,8 +27,11 @@ public class DepartmentController {
 	private DepartmentDao departmentDao;
 	@RequestMapping("")
 	public ResponseEntity<List<Department>> getAllEmployee() {
-	    departmentDao.save(new Department())
+		Department department = new Department();
+		department.setDeleteFlag(false);
+		department.setName("DC13");
 		List<Department> departmentList = departmentDao.findAll();
+		System.out.println(department.getDepartmentId());
 		return new ResponseEntity<>(departmentList, HttpStatus.OK);
 	}
 }

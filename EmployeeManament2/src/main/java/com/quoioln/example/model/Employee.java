@@ -231,5 +231,15 @@ public class Employee {
     public final void setDepartment(Department department) {
         this.department = department;
     }
-	
+
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		return "Employee [employeeId=" + employeeId + ", loginId=" + loginId + ", fullName=" + fullName + ", email="
+				+ email + ", gender=" + gender + ", deleteFlag=" + deleteFlag + ", department=" + department
+				+ ", projectList=" + projectList + "]";
+	}
+    
 }
