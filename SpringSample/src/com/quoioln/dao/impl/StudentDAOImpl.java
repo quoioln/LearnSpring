@@ -1,6 +1,3 @@
-/**
- * 
- */
 package com.quoioln.dao.impl;
 
 import java.util.List;
@@ -18,6 +15,9 @@ import com.quoioln.model.Student;
  *
  */
 public class StudentDAOImpl implements StudentDAO {
+	/**
+	 * The session factory 
+	 */
 	private SessionFactory sessionFactory;
 	
 	public StudentDAOImpl(SessionFactory sessionFactory) {
