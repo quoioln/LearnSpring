@@ -65,18 +65,18 @@ public class EmployeeController {
 	
 	@RequestMapping("/changeProject")
 	
-	public ResponseEntity<Employee> changeProject(HttpServletRequest request
-//			@RequestParam("employeeId") String employeeId, 
-//			@RequestParam("projectIdList") List<String> projectIdList
+	public ResponseEntity<Employee> changeProject(
+			@RequestParam("employeeId") String employeeId, 
+			@RequestParam("projectIdList") List<String> projectIdList
 			) {
-		System.out.println(request.getQueryString());
-		System.out.println(request.getHeaderNames());
-		System.out.println(request.getParameterNames().nextElement());
+//		System.out.println(request.getQueryString());
+//		System.out.println(request.getHeaderNames());
+//		System.out.println(request.getParameterNames().nextElement());
 		System.out.println("OK");
 //		Employee employee = new Employee();
 //		employee.setEmployeeId(employeeId); 
 		Set<Project> projectList = new HashSet<Project>();
-//		System.out.println(employeeId);
+		System.out.println(employeeId);
 ////		Project project;
 //		projectIdList.forEach(projectId -> {
 //			Project project = new Project();
