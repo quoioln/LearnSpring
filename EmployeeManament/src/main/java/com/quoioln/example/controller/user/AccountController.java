@@ -42,6 +42,7 @@ public class AccountController {
         } else if (!account.getRoleId().equals(account.getRoleId())) {
             status = Const.LoginStatus.NO_PERMISSION;
         } else {
+        	session.setAttribute(Const.Session.TOKEN, session.getId());
             session.setAttribute(Const.Session.ACCOUNT_ID, account.getAccountId());
             session.setAttribute(Const.Session.ROLE_ID, account.getRoleId());
         }

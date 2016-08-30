@@ -16,6 +16,8 @@ public class Const {
      */
     public static class Session{
         
+    	public static final String TOKEN = "TOKEN";
+    	
         /** The Constant USERNAME. */
         public static final String ACCOUNT_ID = "ACCOUNT_ID";
         
