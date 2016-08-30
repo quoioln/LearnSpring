@@ -23,17 +23,24 @@ insert into project(name, status, department_id, delete_flag) values('Topic room
 insert into project(name, status, department_id, delete_flag) values('NGC', 12, 1, false);
 
 -- insert into employee table
-insert into employee(login_id, full_name, email, gender, department_id, role_id, delete_flag)
-	values('quoioln', 'Vo Phu Quoi', 'quoipro94@gmail.com', 1, 12, 'DBA', false);
-insert into employee(login_id, full_name, email, gender, department_id, role_id, delete_flag)
-	values('nva', 'Nguyen van A', 'quoipro94@gmail.com', 1, 12, 'ADMIN', false);
-insert into employee(login_id, full_name, email, gender, department_id, role_id, delete_flag)
-	values('nvb', 'Nguyen van B', 'quoipro94@gmail.com', 1, 12, 'USER', false);
-insert into employee(login_id, full_name, email, gender, department_id, role_id, delete_flag)
-	values('nvc', 'Nguyen van C', 'quoipro94@gmail.com', 1, 12, 'USER', false);
+insert into employee(full_name, email, gender, department_id, delete_flag)
+	values('Vo Phu Quoi', 'quoipro94@gmail.com', 1, 12, false);
+insert into employee(full_name, email, gender, department_id, delete_flag)
+	values('Nguyen van A', 'quoipro94@gmail.com', 1, 12,  false);
+insert into employee(full_name, email, gender, department_id, delete_flag)
+	values('Nguyen van B', 'quoipro94@gmail.com', 1, 12, false);
+insert into employee(full_name, email, gender, department_id, delete_flag)
+	values('Nguyen van C', 'quoipro94@gmail.com', 1, 12, false);
+
+-- insert into project team
 insert into project_team(employee_id, project_id, delete_flag) values(1, 1, false);
 insert into project_team(employee_id, project_id, delete_flag) values(2, 1, false);
 insert into project_team(employee_id, project_id, delete_flag) values(3, 1, false);
 insert into project_team(employee_id, project_id, delete_flag) values(4, 1, false);
 insert into project_team(employee_id, project_id, delete_flag) values(1, 1, false);
 insert into project_team(employee_id, project_id, delete_flag) values(1, 1, false);
+
+-- insert into account table
+insert into account(account_id, username, password, role_Id, delete_flag) values(1, 'quoioln', '123456XX', 'DBA', false);
+insert into account(account_id, username, password, role_Id, delete_flag) values(2, '123456', '123456XX', 'USER', false);
+insert into account(account_id, username, password, role_Id, delete_flag) values(3, 'admin', '123456XX', 'ADMIN', false);

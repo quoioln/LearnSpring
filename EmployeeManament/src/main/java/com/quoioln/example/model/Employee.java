@@ -30,9 +30,9 @@ public class Employee {
 	@Column(name = "employee_id") 
 	private Long employeeId;
 	
-	/** The login id. */
-	@Column(name = "login_id")
-	private String loginId;
+//	/** The login id. */
+//	@Column(name = "login_id")
+//	private String loginId;
 	
 	/** The full name. */
 	@Column(name = "full_name")
@@ -72,10 +72,10 @@ public class Employee {
 	 * @param gender the gender
 	 * @param deleteFlag the delete flag
 	 */
-	public Employee(Long employeeId, String loginId, String fullName, String email, Integer gender,
+	public Employee(Long employeeId, String fullName, String email, Integer gender,
 			Boolean deleteFlag) {
 		this.employeeId = employeeId;
-		this.loginId = loginId;
+//		this.loginId = loginId;
 		this.fullName = fullName;
 		this.email = email;
 		this.gender = gender;
@@ -98,24 +98,6 @@ public class Employee {
 	 */
 	public final void setEmployeeId(Long employeeId) {
 		this.employeeId = employeeId;
-	}
-
-	/**
-	 * Gets the login id.
-	 *
-	 * @return the loginId
-	 */
-	public final String getLoginId() {
-		return loginId;
-	}
-
-	/**
-	 * Sets the login id.
-	 *
-	 * @param loginId the loginId to set
-	 */
-	public final void setLoginId(String loginId) {
-		this.loginId = loginId;
 	}
 
 	/**
