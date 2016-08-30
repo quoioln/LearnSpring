@@ -40,6 +40,7 @@ public class ProjectController {
 	public ResponseEntity<List<ProjectTeam>> getAllProject(HttpSession session) {
 		List<ProjectTeam> projectList = projectTeamDao.findAll();
 		session.setAttribute(Const.Session.ACCOUNT_ID, "1");
+		System.out.println(session.getId());
 		return new ResponseEntity<>(projectList, HttpStatus.OK);
 	}
 }

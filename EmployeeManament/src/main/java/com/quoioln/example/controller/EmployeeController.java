@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.quoioln.example.dao.EmployeeDao;
+import com.quoioln.example.jsondata.EmployeeJson;
 import com.quoioln.example.model.Employee;
 
 /**
@@ -44,8 +45,8 @@ public class EmployeeController {
 	@RequestMapping(value = "/add", method = RequestMethod.POST
 	        , consumes = MediaType.APPLICATION_JSON_VALUE
 	        , produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<Employee> addEmployee(@RequestBody Employee employee, HttpSession session) {
-	    employee = employeeDao.save(employee);
+	public ResponseEntity<Employee> addEmployee(@RequestBody EmployeeJson employeeJson, HttpSession session) {
+	    Employee employee = employeeDao.save(employeeJson.getEmployee());
 	    return new ResponseEntity<Employee>(employee, HttpStatus.OK);
 	}
 }
