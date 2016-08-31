@@ -3,7 +3,8 @@
     "accountId": 1,
     "roleId": "DBA",
     "employee": {
-        "fullName": "Vo Phu Quoi",
+        "employeeId": "1",
+        "fullName": "VoPhuQuoi",
         "email": "vpquoi@gmail.com",
         "gender": 1,
         "deleteFlag": false
