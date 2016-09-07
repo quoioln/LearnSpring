@@ -9,14 +9,18 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.quoioln.example.dao.ProjectDao;
 import com.quoioln.example.dao.ProjectTeamDao;
+import com.quoioln.example.jsondata.ProjectJson;
+import com.quoioln.example.model.Project;
 import com.quoioln.example.model.ProjectTeam;
-import com.quoioln.example.util.Const;
 
 /**
  * @author vpquoi
@@ -32,15 +36,46 @@ public class ProjectController {
     private ProjectTeamDao projectTeamDao;
 	
 	/**
-	 * Gets the all project.
-	 *
-	 * @return the all project
-	 */
+     * Gets the all project.
+     *
+     * @param session the session
+     * @return the all project
+     */
 	@RequestMapping("")
 	public ResponseEntity<List<ProjectTeam>> getAllProject(HttpSession session) {
 		List<ProjectTeam> projectList = projectTeamDao.findAll();
-		session.setAttribute(Const.Session.ACCOUNT_ID, "1");
-		System.out.println(session.getId());
 		return new ResponseEntity<>(projectList, HttpStatus.OK);
 	}
+	
+	@RequestMapping(value = "/get", method = RequestMethod.POST
+            , consumes = MediaType.APPLICATION_JSON_VALUE
+            , produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<Object> getProject(@RequestBody ProjectJson employeeJson, HttpSession session) {
+        Project employee = projectDao.findById(employeeJson.getProject().getProjectId());
+        return new ResponseEntity<Object>(employee, HttpStatus.OK);
+    }
+    
+    @RequestMapping(value = "/add", method = RequestMethod.POST
+            , consumes = MediaType.APPLICATION_JSON_VALUE
+            , produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<Project> addProject(@RequestBody ProjectJson employeeJson, HttpSession session) {
+        Project employee = projectDao.create(employeeJson.getProject());
+        return new ResponseEntity<Project>(employee, HttpStatus.OK);
+    }
+    
+    @RequestMapping(value = "/update", method = RequestMethod.POST
+            , consumes = MediaType.APPLICATION_JSON_VALUE
+            , produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<Project> updateProject(@RequestBody ProjectJson employeeJson, HttpSession session) {
+        Project employee = projectDao.update(employeeJson.getProject());
+        return new ResponseEntity<Project>(employee, HttpStatus.OK);
+    }
+    
+    @RequestMapping(value = "/delete", method = RequestMethod.POST
+            , consumes = MediaType.APPLICATION_JSON_VALUE
+            , produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<Project> deleteProject(@RequestBody ProjectJson employeeJson, HttpSession session) {
+        projectDao.deleteById(employeeJson.getProject().getProjectId());
+        return new ResponseEntity<Project>(employeeJson.getProject(), HttpStatus.OK);
+    }
 }
