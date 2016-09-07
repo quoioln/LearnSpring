@@ -1,0 +1,39 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Department",
+    "description": "A department from Acme's catalog",
+    "type": "object",
+    "properties": {
+    	"token": {
+    	
+    	},
+    	"roleId": {
+    	},
+    	"accountId": {
+    	
+    	},
+        "employee": {
+        	"employeeId": {
+	            "description": "The unique identifier for a product",
+	            "type": "integer"
+            },
+            "fullName": {
+            	"type": "integer"
+            },
+            "department": {
+            	"departmentId": {
+            		"type": "integer"
+            	}
+            },
+            "name": {
+	            "description": "Name of the product",
+	            "type": "string"
+	        },
+	        "deleteFlag": {
+	            "type": "boolean"
+	        }
+	            
+        }
+    },
+    "required": ["token", "accountId"]
+}
